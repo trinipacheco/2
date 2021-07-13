@@ -1,0 +1,174 @@
+/* ---------------------------------------- IMPORTANTE ----------------------------------------
+
+Sus tipografías deberían coincidir con los utilizadas en el trabajo del módulo gráfico, 
+con ajustes de disponibilidad en https://fonts.google.com/
+
+Sus colores también deberían coincidir con los utilizados en trabajo del módulo gráfico, 
+con ajustes de "contrast ratio" https://webaim.org/resources/contrastchecker/ 
+
+--------------------------------------------------------------------------------------------- */
+
+/* cambien aquí sus tipografías, necesitan definir un par */
+
+@import url("https://fonts.googleapis.com/css2?family=Andika+New+Basic:ital,wght@0,400;0,700;1,400&family=Dela+Gothic+One&display=swap");
+
+/* cambien aquí sus colores, necesitan definir tres */
+
+:root {
+    --primercolor: #222;
+    --segundocolor: #666; /* menos luminoso y más saturado que el primero */
+    --tercercolor: #aaa; /* más luminoso y menos saturado que el primero */
+    --colorclaro: rgba(255, 255, 255, 0.9);
+    --coloroscuro: rgba(0, 0, 0, 0.9);
+}
+
+body {
+    /* asignen aquí las tipografías y colores para todo texto */
+    font-family: "Andika New Basic", sans-serif;
+    font-weight: 400;
+    background: var(--segundocolor);
+    color: var(--colorclaro);
+}
+
+strong {
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p.lead {
+    /* asignen aquí la tipografía y peso que corresponda para los títulos */
+    font-family: "Dela Gothic One", cursive;
+    font-weight: 400;
+}
+
+a {
+    color: var(--tercercolor);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--colorclaro);
+    text-decoration: none;
+}
+
+header,
+header div.container {
+    height: 100vh;
+}
+
+/* ---------------------------------------- IMPORTANTE ----------------------------------------
+
+Noten que a continuación se define varias veces background-image para el header
+la primera se muestra cuando la pantalla es pequeña (menos de 576px de ancho)
+la segunda se muestra cuando la pantalla tiene como mínimo 576px de ancho
+la tercera se muestra cuando la pantalla tiene como mínimo 992px de ancho
+en todos los casos la imagen debería pesar menos de 300kb
+
+--------------------------------------------------------------------------------------------- */
+
+header {
+    background-color: var(--segundocolor);
+    background-image: url("img/relacion-3x4.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--colorclaro);
+}
+
+@media (min-width: 576px) {
+    header {
+        background-image: url("img/relacion-4x3.png");
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        background-image: url("img/relacion-21x9.png");
+    }
+}
+
+
+/* ---------------------------------------- IMPORTANTE ----------------------------------------
+
+¡Atención con los colores en la imagen que se muestra al final de la sección principal (main)!
+Consideren usar en su parte superior el --segundocolor y en su parte inferior el --tercercolor
+Con tales colores, la imagen sirve de transición a la parte que ofrece más información (aside)
+
+--------------------------------------------------------------------------------------------- */
+
+main {
+    background-image: url("img/relacion-21x9.png");
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: 100% auto;
+}
+
+@media (min-width: 768px) {
+    main {
+        background-size: 50% auto;
+    }
+}
+
+aside {
+    background: var(--tercercolor);
+    color: var(--coloroscuro);
+}
+
+footer {
+    color: var(--segundcolor);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--segundcolor);
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: var(--coloroscuro);
+}
+
+/* ---------------------------------------- IMPORTANTE ----------------------------------------
+
+                            No es necesario modificar lo que sigue
+
+--------------------------------------------------------------------------------------------- */
+
+.card,
+.card-img-top {
+    background: var(--colorclaro);
+    border: none;
+    border-radius: 0 0;
+}
+
+.modal,
+.modal-dialog,
+.modal-content {
+    border: none;
+    border-radius: 0 0;
+    color: var(--coloroscuro);
+}
+
+.modal-header h4.modal-title {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+[data-bs-dismiss] {
+    cursor: pointer;
+}
+
+.modal h6.cart-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.modal p.card-text {
+    font-size: 0.8rem;
+}
